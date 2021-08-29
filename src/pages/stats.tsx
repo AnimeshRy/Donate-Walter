@@ -49,9 +49,9 @@ export const getServerSideProps = async () => {
     //todo change localhost to env
     // console.log(process.env.VERCEL_URL);
     // console.log(`${process.env.VERCEL_URL}/api/donations`);
-    console.log("API", 'http://localhost:3001/');
+    console.log("API", process.env.API_BASE_ENDPOINT);
 
-    const res = await fetch(`http://localhost:3001/api/donations`);
+    const res = await fetch(`${process.env.API_BASE_ENDPOINT}/api/donations`);
 
     const data = await res.json();
     console.log(data);
